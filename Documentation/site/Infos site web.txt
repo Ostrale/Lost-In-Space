@@ -1,0 +1,14 @@
+Site web : Build / Html / index.html
+
+Le modifier j'ai utilisé ces deux liens :
+https://blog.flozz.fr/2020/09/07/introduction-a-sphinx-un-outil-de-documentation-puissant/
+https://blog.flozz.fr/2020/10/04/documenter-un-projet-python-avec-sphinx/
+
+Juste à la place de :
+$ export PYTHONPATH=.
+
+Ajouter A conf.py :
+import os
+import sys 
+sys.path.insert(0, os.path.abspath('.')) 
+sys.path.insert(0, os.path.abspath('../')) 

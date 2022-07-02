@@ -1,0 +1,109 @@
+Exemples
+========
+
+Vous trouverez des exemples d'utilisation de nos programmes
+Attention il se peut que les images proviennent d'ancienne version du programme, nous faisons au mieux pour les actualliser
+
+
+
+Exemple détection taches
+-------------
+
+.. NOTE::
+
+    On va utiliser cette image avec deux méthodes différentes (andro.png)
+
+.. image:: images/andro.png
+        :height: 600
+        :scale: 50
+        :align: center
+        :alt: andromède
+
+Avec CoorEtoileLabel
+____________________
+
+.. code-block:: python
+    :linenos:
+
+    from Lostinspace import *
+    TraitementImage = TraitementImage()
+    TraitementImage.image = 'andro.png'
+    Coordonnees = TraitementImage.CoorEtoileLabel()  # on récupère les coordonnées des étoiles
+    TraitementImage.Affichage()  # on affiche notre image en niveau de gris avec les centre en rouge (optionel)
+
+.. image:: images/androfigure1.png
+        :height: 600
+        :scale: 50
+        :align: center
+        :alt: résultat andromède Gaussian
+
+Avec Gaussian
+_____________
+
+.. code-block:: python
+    :linenos:
+
+    from Lostinspace import *
+    TraitementImage = TraitementImage()
+    TraitementImage.image = 'andro.png'
+    Coordonnees = TraitementImage.CoorEtoileGaussian()  # on récupère les coordonnées des étoiles
+    TraitementImage.Affichage()  # on affiche notre image en niveau de gris avec les centre en rouge (optionel)
+
+.. image:: images/androfigure2.png
+        :height: 600
+        :scale: 50
+        :align: center
+        :alt: résultat andromède Label
+
+Exemple complet
+-------------
+
+Voici comment détecter simplement un astre sur une image
+
+.. code-block:: python
+    :linenos:
+
+    from Lostinspace import *
+    nb_etoile_analyse = 15  # On choisi le nobre d'étoile plus lumineuse pour faire notre analyse khi2
+
+    TraitementImage = TraitementImage()
+    BaseDeDonee = BaseDeDonee()
+    Compar = Comparaison()
+
+    Coordonnees = TraitementImage.CoorEtoileLabel()  # on récupère les coordonnées des étoiles
+    TraitementImage.Affichage()  # on affiche notre image en niveau de gris avec les centre en rouge (optionel)
+
+    Coordonnees = TraitementImage.Maxietoile(Coordonnees, 50)
+    rapport_I = TraitementImage.RapportImage(Coordonnees)  # on fait les rapport pour les comparés à la base de donnée
+
+    LesNPlesLumi_B = BaseDeDonee.ListeN(nb_etoile_analyse)
+    rapport_B = BaseDeDonee.rapportBaseDeDonnee(LesNPlesLumi_B)  # on fait les rapport pour les comparés à l'image'
+    BaseDeDonee.Affichage()  # on affiche une image de synthèse (optionel)
+
+    DicoNDDSKY = Compar.KHI2(rapport_I, rapport_B[0], rapport_B[1])
+    transformation = Compar.transfos(DicoNDDSKY[0],DicoNDDSKY[1])
+    bonnetransfo = Compar.vote(transformation)
+    Letoileestla = Compar.transfoetoile(bonnetransfo)
+    Compar.Affichage()
+
+.. NOTE::
+
+    Par défaut, on cherche la nébuleuse du crabe sur l'image contenant la nébuleuse du crabe, elle se trouve en haut à droite de la plus grosse étoile (au centre). Finallement elle est bien repéré par le programme avec une croix bleux sur l'affichage final.
+
+.. image:: images/Figure_1.png
+        :height: 600
+        :scale: 50
+        :align: center
+        :alt: Figure_1
+
+.. image:: images/Figure_2.png
+        :height: 600
+        :scale: 50
+        :align: center
+        :alt: Figure_2
+
+.. image:: images/Figure_3.png
+        :height: 600
+        :scale: 50
+        :align: center
+        :alt: Figure_3

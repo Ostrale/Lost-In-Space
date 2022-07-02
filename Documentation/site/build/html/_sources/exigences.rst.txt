@@ -1,0 +1,48 @@
+Exigences
+=========
+
+.. IMPORTANT::
+
+    Lisez attentivement les exigences pour ne pas avoir de problèmes lors de l'utilisation.
+
+Bibliothèque
+------------
+
+Tableau Regroupant les exigences d'installation de Lost in Space.
+
++--------------+---------------------------+
+| bibliothèque | installation              |
++==============+===========================+
+| numpy        | pip install numpy         |
++--------------+---------------------------+
+| cv2          | pip install opencv-python |
++--------------+---------------------------+
+| mathplotlib  | pip install mathplotlib   |
++--------------+---------------------------+
+| itertools    | X inclu                   |
++--------------+---------------------------+
+| skyfield     | pip install skyfield      |
++--------------+---------------------------+
+| os           | X inclu                   |
++--------------+---------------------------+
+| astropy      | pip install astropy       |
++--------------+---------------------------+
+| pandas       | pip install pandas        |
++--------------+---------------------------+
+| skimage      | pip install scikit-image  |
++--------------+---------------------------+
+
+.. NOTE::
+
+    X inclu indique de bibliothèque déja inclusent dans Python, pas besoin de les installer
+
+.. WARNING::
+
+    Attention nous déconseillons fortement l'utilisation d'Anaconda et de Spider.
+    Si malgré tous, vous souhaité installer ces bibliothèque dans Anaconda, depuis l'invité de commande de Anaconda remplacer 'pip' par 'conda'
+
+Erreurs Fréquentes
+------------------
+
+Résoudre 'pip' n'est pas reconnu en tant que commande interne sur Windows 10
+https://www.youtube.com/watch?v=pjCWtppLN3k&ab_channel=foxxpy

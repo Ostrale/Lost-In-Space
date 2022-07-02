@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Exemples &mdash; Documentation Lost In Space V5.21m04a</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="prev" title="Exigences" href="exigences.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Lost In Space
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exigences.html">Exigences</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Exemples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#exemple-detection-taches">Exemple détection taches</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#avec-cooretoilelabel">Avec CoorEtoileLabel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#avec-gaussian">Avec Gaussian</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exemple-complet">Exemple complet</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Lost In Space</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Exemples</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/exemples.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="exemples">
+<h1>Exemples<a class="headerlink" href="#exemples" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Vous trouverez des exemples d’utilisation de nos programmes
+Attention il se peut que les images proviennent d’ancienne version du programme, nous faisons au mieux pour les actualliser</p>
+<div class="section" id="exemple-detection-taches">
+<h2>Exemple détection taches<a class="headerlink" href="#exemple-detection-taches" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On va utiliser cette image avec deux méthodes différentes (andro.png)</p>
+</div>
+<a class="reference internal image-reference" href="images/andro.png"><img alt="andromède" class="align-center" src="images/andro.png" style="height: 300.0px;" /></a>
+<div class="section" id="avec-cooretoilelabel">
+<h3>Avec CoorEtoileLabel<a class="headerlink" href="#avec-cooretoilelabel" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Lostinspace</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">TraitementImage</span> <span class="o">=</span> <span class="n">TraitementImage</span><span class="p">()</span>
+<span class="n">TraitementImage</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s1">&#39;andro.png&#39;</span>
+<span class="n">Coordonnees</span> <span class="o">=</span> <span class="n">TraitementImage</span><span class="o">.</span><span class="n">CoorEtoileLabel</span><span class="p">()</span>  <span class="c1"># on récupère les coordonnées des étoiles</span>
+<span class="n">TraitementImage</span><span class="o">.</span><span class="n">Affichage</span><span class="p">()</span>  <span class="c1"># on affiche notre image en niveau de gris avec les centre en rouge (optionel)</span>
+</pre></div>
+</td></tr></table></div>
+<a class="reference internal image-reference" href="images/androfigure1.png"><img alt="résultat andromède Gaussian" class="align-center" src="images/androfigure1.png" style="height: 300.0px;" /></a>
+</div>
+<div class="section" id="avec-gaussian">
+<h3>Avec Gaussian<a class="headerlink" href="#avec-gaussian" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Lostinspace</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">TraitementImage</span> <span class="o">=</span> <span class="n">TraitementImage</span><span class="p">()</span>
+<span class="n">TraitementImage</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s1">&#39;andro.png&#39;</span>
+<span class="n">Coordonnees</span> <span class="o">=</span> <span class="n">TraitementImage</span><span class="o">.</span><span class="n">CoorEtoileGaussian</span><span class="p">()</span>  <span class="c1"># on récupère les coordonnées des étoiles</span>
+<span class="n">TraitementImage</span><span class="o">.</span><span class="n">Affichage</span><span class="p">()</span>  <span class="c1"># on affiche notre image en niveau de gris avec les centre en rouge (optionel)</span>
+</pre></div>
+</td></tr></table></div>
+<a class="reference internal image-reference" href="images/androfigure2.png"><img alt="résultat andromède Label" class="align-center" src="images/androfigure2.png" style="height: 300.0px;" /></a>
+</div>
+</div>
+<div class="section" id="exemple-complet">
+<h2>Exemple complet<a class="headerlink" href="#exemple-complet" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Voici comment détecter simplement un astre sur une image</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Lostinspace</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">nb_etoile_analyse</span> <span class="o">=</span> <span class="mi">15</span>  <span class="c1"># On choisi le nobre d&#39;étoile plus lumineuse pour faire notre analyse khi2</span>
+
+<span class="n">TraitementImage</span> <span class="o">=</span> <span class="n">TraitementImage</span><span class="p">()</span>
+<span class="n">BaseDeDonee</span> <span class="o">=</span> <span class="n">BaseDeDonee</span><span class="p">()</span>
+<span class="n">Compar</span> <span class="o">=</span> <span class="n">Comparaison</span><span class="p">()</span>
+
+<span class="n">Coordonnees</span> <span class="o">=</span> <span class="n">TraitementImage</span><span class="o">.</span><span class="n">CoorEtoileLabel</span><span class="p">()</span>  <span class="c1"># on récupère les coordonnées des étoiles</span>
+<span class="n">TraitementImage</span><span class="o">.</span><span class="n">Affichage</span><span class="p">()</span>  <span class="c1"># on affiche notre image en niveau de gris avec les centre en rouge (optionel)</span>
+
+<span class="n">Coordonnees</span> <span class="o">=</span> <span class="n">TraitementImage</span><span class="o">.</span><span class="n">Maxietoile</span><span class="p">(</span><span class="n">Coordonnees</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">rapport_I</span> <span class="o">=</span> <span class="n">TraitementImage</span><span class="o">.</span><span class="n">RapportImage</span><span class="p">(</span><span class="n">Coordonnees</span><span class="p">)</span>  <span class="c1"># on fait les rapport pour les comparés à la base de donnée</span>
+
+<span class="n">LesNPlesLumi_B</span> <span class="o">=</span> <span class="n">BaseDeDonee</span><span class="o">.</span><span class="n">ListeN</span><span class="p">(</span><span class="n">nb_etoile_analyse</span><span class="p">)</span>
+<span class="n">rapport_B</span> <span class="o">=</span> <span class="n">BaseDeDonee</span><span class="o">.</span><span class="n">rapportBaseDeDonnee</span><span class="p">(</span><span class="n">LesNPlesLumi_B</span><span class="p">)</span>  <span class="c1"># on fait les rapport pour les comparés à l&#39;image&#39;</span>
+<span class="n">BaseDeDonee</span><span class="o">.</span><span class="n">Affichage</span><span class="p">()</span>  <span class="c1"># on affiche une image de synthèse (optionel)</span>
+
+<span class="n">DicoNDDSKY</span> <span class="o">=</span> <span class="n">Compar</span><span class="o">.</span><span class="n">KHI2</span><span class="p">(</span><span class="n">rapport_I</span><span class="p">,</span> <span class="n">rapport_B</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rapport_B</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">transformation</span> <span class="o">=</span> <span class="n">Compar</span><span class="o">.</span><span class="n">transfos</span><span class="p">(</span><span class="n">DicoNDDSKY</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">DicoNDDSKY</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">bonnetransfo</span> <span class="o">=</span> <span class="n">Compar</span><span class="o">.</span><span class="n">vote</span><span class="p">(</span><span class="n">transformation</span><span class="p">)</span>
+<span class="n">Letoileestla</span> <span class="o">=</span> <span class="n">Compar</span><span class="o">.</span><span class="n">transfoetoile</span><span class="p">(</span><span class="n">bonnetransfo</span><span class="p">)</span>
+<span class="n">Compar</span><span class="o">.</span><span class="n">Affichage</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Par défaut, on cherche la nébuleuse du crabe sur l’image contenant la nébuleuse du crabe, elle se trouve en haut à droite de la plus grosse étoile (au centre). Finallement elle est bien repéré par le programme avec une croix bleux sur l’affichage final.</p>
+</div>
+<a class="reference internal image-reference" href="images/Figure_1.png"><img alt="Figure_1" class="align-center" src="images/Figure_1.png" style="height: 300.0px;" /></a>
+<a class="reference internal image-reference" href="images/Figure_2.png"><img alt="Figure_2" class="align-center" src="images/Figure_2.png" style="height: 300.0px;" /></a>
+<a class="reference internal image-reference" href="images/Figure_3.png"><img alt="Figure_3" class="align-center" src="images/Figure_3.png" style="height: 300.0px;" /></a>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="exigences.html" class="btn btn-neutral float-left" title="Exigences" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Suivi Astral.
+
+    </p>
+  </div>
+    
+    
+    
+    Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
